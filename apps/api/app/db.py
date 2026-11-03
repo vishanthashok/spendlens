@@ -9,7 +9,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 from sqlalchemy.pool import StaticPool
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+# Vercel functions have a read-only FS except /tmp (ephemeral; reseeded on cold start).
+DATA_DIR = Path("/tmp/spendlens") if os.getenv("VERCEL") else Path(__file__).resolve().parent.parent / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 DEFAULT_SQLITE = f"sqlite:///{DATA_DIR / 'spendlens.db'}"

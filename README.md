@@ -129,3 +129,7 @@ scripts      ./scripts/dev.sh and ./scripts/test.sh
 ```
 
 OpenAPI lives at `/docs` when the API is running.
+
+## Deploy on Vercel
+
+One project serves both: `vercel.json` builds the Vite SPA (`apps/web/dist`) and routes `/api/*` to FastAPI via `api/index.py`. On Vercel the SQLite DB lives in `/tmp` and is reseeded with Northwind data on each cold start, so demo edits (categorize/match) reset. Set `DATABASE_URL` to a Postgres URL for persistence.
