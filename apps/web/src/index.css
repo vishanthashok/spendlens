@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-ink: #16180f;
+  --color-muted: #5c6456;
+  --color-faint: #8b927f;
+  --color-line: #e2e5d8;
+  --color-paper: #f2f3ec;
+  --color-paper-2: #e6e8dc;
+  --color-lime: #dff56a;
+  --color-moss: #1e6b45;
+  --color-danger: #9f2d2d;
+  --color-warn: #8a5a10;
+  --color-amber: #e0a23a;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #dff56a;
+}
+
+input[type="range"] {
+  accent-color: #16180f;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}

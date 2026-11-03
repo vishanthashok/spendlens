@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: spendlens
+      POSTGRES_PASSWORD: spendlens
+      POSTGRES_DB: spendlens
+    ports:
+      - "54329:5432"
+    volumes:
+      - spendlens-pg:/var/lib/postgresql/data
+
+volumes:
+  spendlens-pg:
