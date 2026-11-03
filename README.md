@@ -2,7 +2,9 @@
 
 Corporate card spend for a small team. SpendLens is the October close for **Northwind Studio**: statement limits, merchant-category controls, receipt matching, and a review queue for charges the categorizer isn't sure about.
 
-Portfolio project by Vishanth Ashok.
+Portfolio project by Vishanth Ashok. Public source: [github.com/vishanthashok/spendlens](https://github.com/vishanthashok/spendlens).
+
+![October close](docs/screenshots/overview.png)
 
 ## Stack
 
@@ -48,13 +50,35 @@ Stop the API and delete `apps/api/data/spendlens.db`. The next start reseeds Nor
 
 ## Screens
 
-The demo opens on a finished October statement, plus a few November charges that arrived after the books closed.
+The demo opens on a finished October statement, plus a few November charges that arrived after the books closed. These captures are the running app.
 
-1. **Overview.** The headline is plan versus spend. Under it: daily spend, category mix, budget versus actual, the exception queue, and each card's statement limit.
-2. **Transactions.** Filter by cardholder, category, status, receipt, or "Needs review". Auto means the model filed it. You means a person confirmed or changed it. Confirm is one click. Picking another category saves immediately.
-3. **Cards.** Six Visa cards. The face updates as you drag the limit; Save writes it through the optimistic hook. Allow / Review / Block is per merchant category, per card. Freeze stops the card without deleting history.
-4. **Budgets.** Grouped bars for plan and actual. Equipment is the one over plan, drawn in red. The table shows owner, variance, and percent used.
-5. **Receipts.** An inbox of uploads that aren't attached yet. Delta's return flight, the London dinner, and the studio monitor each have a suggested charge. Two uploads (Blue Bottle, Bay Print) don't match anything on the ledger.
+### Overview
+
+The headline is plan versus spend. Under it: daily spend, category mix, budget versus actual, and the exception queue.
+
+![Overview](docs/screenshots/overview.png)
+
+### Transactions
+
+Filter by cardholder, category, status, receipt, or "Needs review". Auto means the model filed it. You means a person confirmed or changed it. Confirm is one click. Picking another category saves immediately.
+
+![Transactions](docs/screenshots/transactions.png)
+
+### Cards
+
+Six Visa cards. The face updates as you drag the limit; Save writes it through the optimistic hook. Allow / Review / Block is per merchant category, per card. Freeze stops the card without deleting history.
+
+![Cards](docs/screenshots/cards.png)
+
+### Receipts
+
+Uploads that are not attached yet. Delta's return flight, the London dinner, and the studio monitor each have a suggested charge. Two uploads (Blue Bottle, Bay Print) do not match anything on the ledger.
+
+![Receipts](docs/screenshots/receipts.png)
+
+### Budgets
+
+Grouped bars for plan and actual. Equipment is the one over plan, drawn in red. The table shows owner, variance, and percent used. Open it from the overview chart.
 
 ## How the close is shaped
 

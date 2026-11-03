@@ -47,7 +47,7 @@ export function DailySpendChart({ points }: { points: { date: string; spendCents
   return (
     <div className="h-52">
       <ResponsiveContainer width="100%" height="100%">
-        <AreaChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
+        <AreaChart data={data} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
           <defs>
             <linearGradient id="spendFill" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#dff56a" stopOpacity={0.95} />
@@ -55,7 +55,7 @@ export function DailySpendChart({ points }: { points: { date: string; spendCents
             </linearGradient>
           </defs>
           <CartesianGrid vertical={false} stroke="#e2e5d8" />
-          <XAxis dataKey="label" tickLine={false} axisLine={false} tick={{ fill: "#8b927f", fontSize: 11 }} interval={4} />
+          <XAxis dataKey="label" tickLine={false} axisLine={false} tick={{ fill: "#8b927f", fontSize: 11 }} interval={4} padding={{ left: 8, right: 12 }} />
           <YAxis
             tickLine={false}
             axisLine={false}
